@@ -28,6 +28,7 @@ def print_board(board):
 
 print_board(grid)
 
+# check if the board is complete
 def complete(board):
     for i in range(len(board)):
         for j in range(len(board)):
@@ -60,27 +61,18 @@ def valid(position_x, position_y, number):
 
 def solve():
     for row in range(len(grid)):
-        for col in range(len(grid[row])):
+        for col in range(len(grid[row])):            
             if grid[row][col] == 0:
+                # looping through all possible values
                 for number in range(1,10):
                     if valid(row,col,number):
                         grid[row][col] = number
-                        solve()
-                        grid[row][col] = 0
+                        # if its valid put it in the grid and call solve with the modified grid
+                        if not solve():
+                        # if solve return false we make the previous location = 0 and try another possibility
+                            grid[row][col] = 0
                 return False
     print_board(grid)
 
-
+# main
 solve()
-
-
-
-  
-
-
-
-
-
-
-
-
