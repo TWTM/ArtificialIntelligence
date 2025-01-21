@@ -1,2 +1,2 @@
 # Artificial-Intelligence
-Artificial Intelligence related projects that I've done 
+Basic algorithms that introduce the concept of Artificial Intelligence
